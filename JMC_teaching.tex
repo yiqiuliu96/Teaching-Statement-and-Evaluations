@@ -1,0 +1,234 @@
+% LaTeX Curriculum Vitae Template
+%
+% Copyright (C) 2004-2009 Jason Blevins <jrblevin@sdf.lonestar.org>
+% http://jblevins.org/projects/cv-template/
+%
+% You may use use this document as a template to create your own CV
+% and you may redistribute the source code freely. No attribution is
+% required in any resulting documents. I do ask that you please leave
+% this notice and the above URL in the source code if you choose to
+% redistribute this file.
+
+\documentclass[letterpaper]{article}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+%\usepackage{amsmath}%for substack, multiline underbrace
+% \usepackage{sectsty}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{fourier-orns}
+\usepackage[textfont=normal,labelfont={large,sc},labelsep=colon]{caption}
+
+\usepackage{etoolbox}
+\usepackage{longtable}
+\usepackage[para]{threeparttable}
+\appto\TPTnoteSettings{\linespread{1}\footnotesize} %for 3parttable
+\usepackage{booktabs}
+\usepackage[bottom]{footmisc}
+\usepackage{alltt}
+\usepackage[zerostyle=e,straightquotes]{newtxtt}
+
+% Cleveref setup
+\usepackage[capitalize,noabbrev]{cleveref}
+\Crefname{equation}{Equation}{Equations}
+\crefname{equation}{}{}
+\newcommand{\creflastconjunction}{, and\nobreakspace} %Oxford comma
+\newcommand{\crefrangeconjunction}{--}
+
+% Comment the following lines to use the default Computer Modern font
+% instead of the Palatino font provided by the mathpazo package.
+% Remove the 'osf' bit if you don't like the old style figures.
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+
+% Set your name here
+\def\name{XXX YOUR NAME}
+
+\def\footerlink{}
+
+% Customize page headers
+%NEW LINES:
+\fancyhead{} \fancyfoot{} %clear defaults
+\markright{\Large\sc Teaching Statement and Evaluations \hfill\name}
+\fancyhead[RO]{\slshape \rightmark} %only need RO b/c not twoside
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headwidth}{\textwidth}
+\setlength{\headheight}{18pt}
+\pagestyle{fancy}
+
+% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = false,
+  urlcolor = black,
+  pdfauthor = {\name},
+  pdfkeywords = {economics},
+  pdftitle = {\name: Curriculum Vitae},
+  pdfsubject = {Curriculum Vitae},
+  pdfpagemode = UseNone
+}
+
+\geometry{
+  body={6.5in, 9in},
+  left=1.0in,
+  top=1.25in
+}
+
+% % Custom section fonts
+% \sectionfont{\rmfamily\mdseries\Large}
+% \subsectionfont{\rmfamily\mdseries\itshape\large}
+
+% Don't indent paragraphs.
+%\setlength\parindent{0em}
+
+% Make lists without bullets
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.5em}
+  }
+}{ \end{list} }
+
+
+\begin{document}
+
+
+% \doublespacing
+\onehalfspacing
+
+XXX INTRO/PHILOSOPHY
+
+
+XXX SPECIFIC EXPERIENCE, LESSONS LEARNED, ETC.
+My many semesters as a teaching assistant have been invaluable...
+
+
+
+\begin{center}
+\large\decofourleft\hspace{0.2cm}\hspace{0.2cm}\decofourright
+\end{center}
+
+\onehalfspacing
+
+The following is a summary of my teaching experience and evaluations.
+% 
+Before beginning my PhD program, I XXX.
+At XXX PHD SCHOOL, I have served as a teaching assistant for XXX undergraduate courses, in XXX DIFFERENT FIELDS/LEVELS.
+My TA duties have included XXX.
+Additionally, I have XXX IF APPLICABLE.
+
+
+\Cref{tab:key,tab:instructors,tab:students,tab:comments} summarize my official TA evaluations; full evaluations available upon request.
+
+
+\begin{table}[htbp]
+\centering
+\caption{\label{tab:key}Course codes and descriptions.}
+\begin{threeparttable}
+\begin{tabular}{lll}
+\toprule
+ECON & Level & Description \\
+\midrule
+4371/7371 & BA/MA & Introductory Econometrics \\
+1014 & BA & Principles of Microeconomics \\
+\bottomrule
+\end{tabular}
+% % 
+% \begin{tablenotes}
+%  \item 1xxx--4xxx: undergraduate; 7xxx--8xxx: MA; 9xxx: PhD.
+% \end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%INSTRUCTORS
+\begin{table}[htbp]
+\centering
+\caption{\label{tab:instructors}Summary of evaluations from course instructors.}
+\begin{threeparttable}
+\begin{tabular}{rccc}
+\toprule
+% Instructor 
+& XXX INSTRUCTOR & XXX INSTRUCTOR & XXX INSTRUCTOR \\
+% Quarter 
+& XXX SEMESTER & XXX SEMESTER & XXX SEMESTER \\
+% Course 
+& 4371/7371 & 4371/7371 & 1014 \\
+\midrule
+I.1\tnote{a} & Strongly Agree & Strongly Agree & Strongly Agree \\
+I.2\tnote{b} & Strongly Agree & Strongly Agree & Strongly Agree \\
+\bottomrule
+\end{tabular}
+% 
+\begin{tablenotes}
+ \item[a] I.1: ``TA understands the course material''
+ \item[b] I.2: ``TA is interested \& courteous to students''
+%  \item Data unavailable for certain courses.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+
+
+\begin{table}[htbp]
+\centering
+\caption{\label{tab:students}Summary of evaluations from students.}
+\begin{threeparttable}
+\begin{tabular}{llccccc}
+\toprule
+ & & \multicolumn{2}{c}{S.1\tnote{a}} && \multicolumn{2}{c}{S.2\tnote{b}} \\
+\cmidrule{3-4}\cmidrule{6-7}
+Semester     & Course & $n$ & Avg.\ (out of 4) && $n$ & Avg.\ (out of 4) \\
+\midrule
+XXX   & 1014      & 20 & 3.00 && 19 & 2.95 \\
+XXX   & 4371/7371   & 19 & 3.21 && 19 & 3.11 \\
+XXX   & 4371/7371   & 44 & 3.25 && 43 & 3.30 \\
+XXX NOW & XXX & \multicolumn{5}{c}{\textit{Evaluations not yet tabulated}} \\
+%Fall 2012   &  \\
+\midrule
+\multicolumn{2}{r}{Econometrics} & & (3.31, 3.40) && & (3.30, 3.35) \\
+\multicolumn{2}{r}{Microeconomics} & & (3.16, 3.20) && & (3.08, 3.06)  \\
+\multicolumn{2}{r}{Overall}  & & (3.24, 3.28) && & (3.19, 3.18) \\
+\bottomrule
+\end{tabular}
+% 
+\begin{tablenotes}
+ \item[a] S.1: ``My TA was approachable, courteous, and showed interest and concern for my learning and understanding''
+ \item[b] S.2: ``I would recommend my TA to other students.''
+ \item Numeric conversion is 1=Strongly Disagree, 2=Disagree, 3=Agree, 4=Strongly Agree.
+ \item Overall averages are (weighted, unweighted) by number of responses $n$. 
+%   See \cref{tab:key} for course codes; \cref{tab:comments} has additional comments.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+% COMMENTS
+\begin{table}[htbp]
+\centering
+\caption{\label{tab:comments}Sample comments from instructors and students.}
+\begin{threeparttable}
+\begin{tabular}{p{1in}p{5in}}
+\toprule
+Commenter & Comment  \\
+\midrule
+XXX INSTRUCTOR 1 & XXX COMMENT \\
+XXX INSTRUCTOR 2 & XXX COMMENT \\
+\midrule
+% STUDENTS -->
+XXX STUDENT 1 (ECON XXX) & XXX COMMENT \\
+XXX STUDENT 2 (ECON XXX) & XXX COMMENT \\
+\bottomrule
+\end{tabular}
+% % 
+% \begin{tablenotes}
+%  \item ...
+% \end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+\end{document}
+%EOF
